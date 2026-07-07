@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Chor Police Dakat Babu"
+version = "1.0.0"
+id = "artifacts/chor-police"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25662
+
+[services.development]
+run = "pnpm --filter @workspace/chor-police run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/chor-police", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/chor-police/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25662"
+BASE_PATH = "/"

@@ -1,0 +1,23 @@
+kind = "mobile"
+previewPath = "/mobile/"
+title = "Chor Police Dakat Babu (Mobile)"
+version = "1.0.0"
+id = "artifacts/chor-police-mobile"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/mobile/" ]
+localPort = 23435
+
+[services.development]
+run = "pnpm --filter @workspace/chor-police-mobile run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/chor-police-mobile", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/chor-police-mobile", "run", "serve" ]
+
+[services.env]
+PORT = "23435"
+BASE_PATH = "/mobile/"

@@ -1,0 +1,2 @@
+- [Firebase Vite PWA setup](firebase-pwa-setup.md) — Firebase-first game apps skip OpenAPI; use VITE_FIREBASE_* env vars + vite-plugin-pwa for installable PWA.
+- [Game round resolution pattern](game-round-resolution.md) — Police players (not just host) must be able to finalize round; gate on existing result to prevent double-writes.
