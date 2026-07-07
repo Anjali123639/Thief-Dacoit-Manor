@@ -1,0 +1,12 @@
+[build]
+  command   = "pnpm --filter @workspace/chor-police run build"
+  publish   = "artifacts/chor-police/dist/public"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback — all routes served by index.html
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
